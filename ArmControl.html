@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ArmControl v1.0</title>
+    <style>
+      body,
+      body .container{
+        min-width: 30em;
+      }
+      div {
+        border: solid .2em #555;
+        margin: 2em;
+        padding: 2em;
+      }
+      div#interfaces{
+        width: auto;
+      }
+      @media only screen and (min-width: 55em) {
+        div#interfaces{
+          float:right;
+          max-width: 20em;
+          width: 20em;
+        }
+
+      }
+
+      body .container{
+        max-width: 64em;
+        margin: auto;
+        padding: 0em;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="title">
+        <span>Title</span>
+      </div>
+      <div id="content">
+        <div id="interfaces">
+          <span>Interfaces</span>
+        </div>
+        <div id="controls">
+          <span>Controls</span>
+        </div>
+        <div id="preview">
+          <span>Preview</span>
+        </div>
+      </div>
+      <div id="footer">
+        <span>Footer</span>
+      </div>
+    </div>
+  </body>
+</html>
