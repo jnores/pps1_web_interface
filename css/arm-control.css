@@ -2,7 +2,13 @@ body,
 body .container{
   min-width: 30em;
 }
-div {
+
+div#title,
+div#content,
+div#interfaces,
+div#controls,
+div#preview,
+div#footer {
   border: solid .2em #555;
   margin: 2em;
   padding: 2em;
@@ -16,11 +22,33 @@ div#interfaces{
     max-width: 20em;
     width: 20em;
   }
-
 }
 
 body .container{
   max-width: 64em;
   margin: auto;
   padding: 0em;
+}
+
+div.title{
+  margin-bottom: 2em;
+}
+label {
+  display: inline-block;
+  min-width: 6em;
+}
+
+div.servo-control {
+  margin: .3em;
+}
+div.servo-control a{
+  display:inline-block;
+  background-color: #AAA;
+  min-width: 2em;
+  min-height: 2em;
+  line-height: 2em;
+  align-content: center;
+  text-align: center;
+  cursor:pointer;
+  cursor:hand;
 }

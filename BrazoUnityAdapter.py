@@ -3,7 +3,8 @@ import socket;
 
 class BrazoUnityAdapter(Brazo):
     """docstring for BrazoUnityAdapter."""
-    UDP_IP_UNITY = "127.0.0.1";
+    # UDP_IP_UNITY = "127.0.0.1";
+    UDP_IP_UNITY = "192.168.0.33";
     UDP_PORT_UNITY = 8008;
 
     def __init__(self):
@@ -16,6 +17,6 @@ class BrazoUnityAdapter(Brazo):
         En esta clase, la solicitud de movimiento se envia por udp a la
         aplicacion Unity que tiene el server corriendo.
         """
-        print("Unity mover ",servo_id," => ",desplazamiento)
+        print("Unity mover (",self.server_address,")",servo_id," => ",desplazamiento)
         command="ROTAR("+str(servo_id)+","+str(desplazamiento)+")"
         self.sock.sendto(command.encode("utf8"),self.server_address);

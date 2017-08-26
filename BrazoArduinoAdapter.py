@@ -3,7 +3,8 @@ import socket;
 
 class BrazoArduinoAdapter(Brazo):
     """docstring for BrazoArduinoAdapter."""
-    UDP_IP_ARDUINO = "127.0.0.1";
+    # UDP_IP_ARDUINO = "127.0.0.1";
+    UDP_IP_ARDUINO = "192.168.0.33";
     UDP_PORT_ARDUINO = 8108;
 
     def __init__(self):
