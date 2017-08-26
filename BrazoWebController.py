@@ -14,17 +14,26 @@ class BrazoWebController(BaseHTTPRequestHandler):
 		o = urlparse(self.path)
 		print(parse_qs(o.query))
 		# Send response status code
-		self.send_response(200)
 
 		# Send headers
-		self.send_header('Content-type','text/html')
-		self.end_headers()
 
 		# Send message back to client
-		# message = "Hello world!"
-		# if not self.path.startswith("/servo") :
-		# 	message = "HELLO world!"
-		path = os.path.abspath(os.path.join("ArmControl.html"))
+		if self.path.endswith(".js"):
+			file_name = 'js/'+self.path.rsplit('/',1)[-1]
+			self.send_response(200)
+			self.send_header('Content-type','text/plain')
+		elif self.path.endswith(".css"):
+			file_name = 'css/'+self.path.rsplit('/',1)[-1]
+			self.send_response(200)
+			self.send_header('Content-type','text/css')
+		else:
+			self.send_response(200)
+			self.send_header('Content-type','text/html')
+			file_name = "ArmControl.html"
+
+		self.end_headers()
+		path = os.path.abspath(os.path.join(file_name))
+		print ("load file: ",path)
 		f = open(path, "rb")
 		# Write content as utf-8 data
 		self.wfile.write(f.read())

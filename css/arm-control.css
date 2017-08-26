@@ -1,0 +1,26 @@
+body,
+body .container{
+  min-width: 30em;
+}
+div {
+  border: solid .2em #555;
+  margin: 2em;
+  padding: 2em;
+}
+div#interfaces{
+  width: auto;
+}
+@media only screen and (min-width: 55em) {
+  div#interfaces{
+    float:right;
+    max-width: 20em;
+    width: 20em;
+  }
+
+}
+
+body .container{
+  max-width: 64em;
+  margin: auto;
+  padding: 0em;
+}
